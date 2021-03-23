@@ -1,4 +1,5 @@
 <template>
+  <Navbar />
   <div class="content">
     <router-view />
   </div>
@@ -6,9 +7,10 @@
 
 <script>
 import Home from "./views/Home.vue";
+import Navbar from "./components/Navbar.vue";
 
 export default {
-  components: { Home },
+  components: { Home, Navbar },
 };
 </script>
 
