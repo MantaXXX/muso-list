@@ -8,8 +8,8 @@
       required
     ></textarea>
     <label>upload playlist cover image</label>
-    <input type="file" />
-    <div class="error"></div>
+    <input type="file" @change="handleChange" />
+    <div class="error">{{ fileError }}</div>
     <button>Create</button>
   </form>
 </template>
@@ -21,10 +21,29 @@ export default {
   setup() {
     const title = ref("");
     const description = ref("");
+    const file = ref(null);
+    const fileError = ref(null);
 
-    const handleSubmit = async () => {};
+    const handleSubmit = () => {
+      if (file.value) {
+      }
+    };
 
-    return { title, description, handleSubmit };
+    // allowed file types
+    const types = ["image/png", "image/jpeg"];
+
+    const handleChange = (e) => {
+      const selected = e.target.files[0];
+      if (selected && types.includes(selected.type)) {
+        file.value = selected;
+        fileError.value = null;
+      } else {
+        file.value = null;
+        fileError.value = "Please select an image file (png or jpg)";
+      }
+    };
+
+    return { title, description, handleSubmit, handleChange, fileError };
   },
 };
 </script>
