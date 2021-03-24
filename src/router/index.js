@@ -21,7 +21,7 @@ const routes = [
     component: Signup
   },
   {
-    path: '/Playlist/create',
+    path: '/Playlists/create',
     name: 'CreatePlaylist',
     component: CreatePlaylist
   }
