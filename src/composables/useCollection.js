@@ -13,8 +13,9 @@ const useCollection = (collection) => {
 
     try {
       // specific the collection to add
-      await projectFirestore.collection(collection).add(doc)
+      const res = await projectFirestore.collection(collection).add(doc)
       isPending.value = false
+      return res
     }
     catch (err) {
       console.log(err.message)
