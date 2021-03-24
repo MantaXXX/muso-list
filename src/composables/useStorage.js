@@ -19,7 +19,7 @@ const useStorage = () => {
       // 3. upload the file to the ref: .put() method
       const res = await storageRef.put(file)
       // access to get the uploaded file
-      url.value = res.ref.getDownloadURL()
+      url.value = await res.ref.getDownloadURL()
     } catch (err) {
       console.log(err.message)
       error.value = err.message
