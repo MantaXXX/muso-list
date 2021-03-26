@@ -47,6 +47,13 @@ export default {
 </script>
 
 <style scoped>
+@media only screen and (max-width: 400px) {
+  nav .links a {
+    display: block;
+    width: 100%;
+  }
+}
+
 .navbar {
   padding: 16px 10px;
   margin-bottom: 60px;
